@@ -1,0 +1,5 @@
+name: FireStaff
+main: firestaff.FireStaffClass
+version: 1.0.0
+commands:
+  firestaff:

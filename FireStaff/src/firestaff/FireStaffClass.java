@@ -28,7 +28,7 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 		if(command.getName().equalsIgnoreCase("firestaff")){
 			ItemStack varaFuego = new ItemStack(Material.BLAZE_ROD);
 			ItemMeta varaMeta = varaFuego.getItemMeta();
-			varaMeta.setDisplayName(ChatColor.GOLD + "Vara de fuego de" + p.getName());
+			varaMeta.setDisplayName(ChatColor.GOLD + "Firestaff");
 			varaFuego.setItemMeta(varaMeta);
 			p.setItemInHand(varaFuego);
 			return true;
@@ -40,17 +40,6 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 	@Override
 	public void onEnable() {
 		Bukkit.getServer().getPluginManager().registerEvents(this,this);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 	@EventHandler

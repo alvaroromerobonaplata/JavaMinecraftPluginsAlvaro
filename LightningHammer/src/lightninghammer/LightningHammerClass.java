@@ -1,4 +1,4 @@
-package flashofDeath;
+package lightninghammer;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -16,16 +16,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class FlashofDeathClass extends JavaPlugin implements Listener {
+public class LightningHammerClass extends JavaPlugin implements Listener {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		Player p = (Player)sender;
 
 		if(command.getName().equalsIgnoreCase("shocking")){
-			ItemStack varaRayo = new ItemStack(Material.BLAZE_ROD);
+			ItemStack varaRayo = new ItemStack(Material.DIAMOND_AXE);
 			ItemMeta varaMeta = varaRayo.getItemMeta();
-			varaMeta.setDisplayName(ChatColor.BLUE + "Electrocutioner" + p.getName());
+			varaMeta.setDisplayName(ChatColor.BLUE + "LightningHammer");
 			varaRayo.setItemMeta(varaMeta);
 			p.setItemInHand(varaRayo);
 			return true;
@@ -46,7 +46,7 @@ public class FlashofDeathClass extends JavaPlugin implements Listener {
 			if(itemEnMano != null){
 				ItemMeta im = itemEnMano.getItemMeta();
 				if(im != null){
-					if(im.getDisplayName() != null && im.getDisplayName().contains("Electrocutioner")){
+					if(im.getDisplayName() != null && im.getDisplayName().contains("LightningHammer")){
 						Player p = event.getPlayer();
 						Location l = p.getTargetBlock(null, 225).getLocation();
 						l.getWorld().strikeLightning(l);

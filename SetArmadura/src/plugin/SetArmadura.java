@@ -32,8 +32,7 @@ public class SetArmadura extends JavaPlugin implements Listener{
 		PlayerInventory inventario =p.getInventory();	
 			
 		
-		
-		ChatColor C1 = ChatColor.RED;
+		ChatColor C1 = ChatColor.GREEN;
 		
 		
 		/////Botas//////
@@ -46,6 +45,7 @@ public class SetArmadura extends JavaPlugin implements Listener{
 		
 		////////Pechera/////
 		ItemStack pechera = new ItemStack (Material.DIAMOND_CHESTPLATE);
+		
 		ChatColor C2 = ChatColor.BLUE;
 		
 		ItemMeta pecheraMeta = pechera.getItemMeta();
@@ -56,17 +56,17 @@ public class SetArmadura extends JavaPlugin implements Listener{
 		
 		///////Casco/////
 		ItemStack casco = new ItemStack (Material.DIAMOND_HELMET);
-		ChatColor C3 = ChatColor.GOLD;
+		ChatColor C3 = ChatColor.RED;
 		
 		ItemMeta cascoMeta = pechera.getItemMeta();
-		cascoMeta.setDisplayName (C3+"CabezaDuranator");
+		cascoMeta.setDisplayName (C3+"Casconator");
 		cascoMeta.addEnchant(Enchantment.LUCK,13, true);
 		casco.setItemMeta(cascoMeta);
 		inventario.addItem(casco);
 		
 		//////////Pantalones////////
 		ItemStack pantalones = new ItemStack (Material.DIAMOND_LEGGINGS);
-		ChatColor C4 = ChatColor.GREEN;
+		ChatColor C4 = ChatColor.YELLOW;
 		
 		ItemMeta pantalonesMeta = pantalones.getItemMeta();
 		pantalonesMeta.setDisplayName (C4+"Pantaloninator");

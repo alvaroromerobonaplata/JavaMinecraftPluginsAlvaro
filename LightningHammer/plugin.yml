@@ -1,0 +1,5 @@
+name:LightningHammer
+main: lightninghammer.LightningHammerClass
+version: 1.0.0
+commands:
+  shocking:

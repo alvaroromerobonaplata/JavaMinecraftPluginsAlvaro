@@ -16,24 +16,23 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Pickaggedon extends JavaPlugin implements Listener{
+public class InfinityBlade extends JavaPlugin implements Listener{
 
 	@Override
 	public void onEnable() {
 		Bukkit.getServer().getPluginManager().registerEvents(this, this); 
-		ItemStack pickaxe = new ItemStack (Material.DIAMOND_PICKAXE);
-		ItemMeta im = pickaxe.getItemMeta();
-		im.setDisplayName(ChatColor.BLACK + "Monster Pickaxe");
-		im.addEnchant(Enchantment.KNOCKBACK, 10,true);
-		im.addEnchant(Enchantment.DIG_SPEED, 20,true);
+		ItemStack sword = new ItemStack (Material.DIAMOND_SWORD);
+		ItemMeta im = sword.getItemMeta();
+		im.setDisplayName(ChatColor.BLACK + "Infinity Blade");
+		im.addEnchant(Enchantment.KNOCKBACK, 100,true);
+		im.addEnchant(Enchantment.FIRE_ASPECT, 100,true);
 		im.addEnchant (Enchantment.DURABILITY, 100, true);
-		pickaxe.setItemMeta(im);
-		ShapedRecipe monsterPickaxe = new ShapedRecipe(pickaxe);
-		monsterPickaxe.shape("$$$","o*o","o%o");
-		monsterPickaxe.setIngredient('$',Material.DIAMOND);
-		monsterPickaxe.setIngredient('%',Material.OBSIDIAN);
-		monsterPickaxe.setIngredient('*',Material.BLAZE_ROD);
-		getServer().addRecipe(monsterPickaxe);
+		sword.setItemMeta(im);
+		ShapedRecipe infinityBlade = new ShapedRecipe(sword);
+		infinityBlade.shape("o$o","$*$","$*$");
+		infinityBlade.setIngredient('$',Material.DIAMOND);
+		infinityBlade.setIngredient('*',Material.BLAZE_ROD);
+		getServer().addRecipe(infinityBlade);
 		
 	}
 

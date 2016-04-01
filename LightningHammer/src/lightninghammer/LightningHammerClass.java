@@ -12,9 +12,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class LightningHammerClass extends JavaPlugin implements Listener {
 
@@ -83,5 +86,18 @@ public class LightningHammerClass extends JavaPlugin implements Listener {
 			}
 		}
 
+	}
+	
+	
+	@EventHandler
+	public void onPlayerInteract(PlayerMoveEvent event){
+		Player p = event.getPlayer();
+		
+		if(p.getItemInHand().getType() == Material.DIAMOND_AXE){
+			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 100));
+			
+		}
+	
 	}
 }

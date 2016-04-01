@@ -73,4 +73,15 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 		}
 	}
 
+	@EventHandler
+	public void onPlayerInteract(PlayerMoveEvent event){
+		Player p = event.getPlayer();
+		
+		if(p.getItemInHand().getType() == Material.DIAMOND_SWORD){
+			p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100, 10));
+		}
+	}
+	
 }

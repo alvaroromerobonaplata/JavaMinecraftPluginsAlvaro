@@ -39,18 +39,38 @@ public class SetArmadura extends JavaPlugin implements Listener{
 		ItemStack botas = new ItemStack (Material.DIAMOND_BOOTS);
 		ItemMeta botasMeta = botas.getItemMeta();
 		botasMeta.setDisplayName (C1+"Botinators");
-		botasMeta.addEnchant(Enchantment.DURABILITY,17, true);
+		botasMeta.addEnchant(Enchantment.DURABILITY, 100, true);
+		botasMeta.addEnchant(Enchantment.DEPTH_STRIDER,100, true);
+		botasMeta.addEnchant(Enchantment.LUCK, 100, true);
+		botasMeta.addEnchant(Enchantment.OXYGEN,100, true);
+		botasMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL,100, true);
+		botasMeta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 100, true);
+		botasMeta.addEnchant(Enchantment.PROTECTION_FIRE,100, true);
+		botasMeta.addEnchant(Enchantment.PROTECTION_PROJECTILE,100, true);
+		botasMeta.addEnchant(Enchantment.SILK_TOUCH, 100, true);
+		botasMeta.addEnchant(Enchantment.WATER_WORKER,100, true);
+		botasMeta.addEnchant(Enchantment.THORNS,100, true);
 		botas.setItemMeta(botasMeta);
 		inventario.addItem(botas);
 		
 		////////Pechera/////
 		ItemStack pechera = new ItemStack (Material.DIAMOND_CHESTPLATE);
 		
-		ChatColor C2 = ChatColor.BLUE;
+		ChatColor C2 = ChatColor.AQUA;
 		
 		ItemMeta pecheraMeta = pechera.getItemMeta();
 		pecheraMeta.setDisplayName (C2+"Pechotinator");
-		pecheraMeta.addEnchant(Enchantment.PROTECTION_PROJECTILE,17, true);
+		pecheraMeta.addEnchant(Enchantment.DURABILITY, 100, true);
+		pecheraMeta.addEnchant(Enchantment.DEPTH_STRIDER,100, true);
+		pecheraMeta.addEnchant(Enchantment.LUCK, 100, true);
+		pecheraMeta.addEnchant(Enchantment.OXYGEN,100, true);
+		pecheraMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL,100, true);
+		pecheraMeta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 100, true);
+		pecheraMeta.addEnchant(Enchantment.PROTECTION_FIRE,100, true);
+		pecheraMeta.addEnchant(Enchantment.PROTECTION_PROJECTILE,100, true);
+		pecheraMeta.addEnchant(Enchantment.SILK_TOUCH, 100, true);
+		pecheraMeta.addEnchant(Enchantment.WATER_WORKER,100, true);
+		pecheraMeta.addEnchant(Enchantment.THORNS,100, true);
 		pechera.setItemMeta(pecheraMeta);
 		inventario.addItem(pechera);
 		
@@ -60,7 +80,17 @@ public class SetArmadura extends JavaPlugin implements Listener{
 		
 		ItemMeta cascoMeta = pechera.getItemMeta();
 		cascoMeta.setDisplayName (C3+"Casconator");
-		cascoMeta.addEnchant(Enchantment.LUCK,13, true);
+		cascoMeta.addEnchant(Enchantment.DURABILITY, 100, true);
+		cascoMeta.addEnchant(Enchantment.DEPTH_STRIDER,100, true);
+		cascoMeta.addEnchant(Enchantment.LUCK, 100, true);
+		cascoMeta.addEnchant(Enchantment.OXYGEN,100, true);
+		cascoMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL,100, true);
+		cascoMeta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 100, true);
+		cascoMeta.addEnchant(Enchantment.PROTECTION_FIRE,100, true);
+		cascoMeta.addEnchant(Enchantment.PROTECTION_PROJECTILE,100, true);
+		cascoMeta.addEnchant(Enchantment.SILK_TOUCH, 100, true);
+		cascoMeta.addEnchant(Enchantment.WATER_WORKER,100, true);
+		cascoMeta.addEnchant(Enchantment.THORNS,100, true);
 		casco.setItemMeta(cascoMeta);
 		inventario.addItem(casco);
 		
@@ -70,7 +100,17 @@ public class SetArmadura extends JavaPlugin implements Listener{
 		
 		ItemMeta pantalonesMeta = pantalones.getItemMeta();
 		pantalonesMeta.setDisplayName (C4+"Pantaloninator");
-		pantalonesMeta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS,17, true);
+		pantalonesMeta.addEnchant(Enchantment.DURABILITY, 100, true);
+		pantalonesMeta.addEnchant(Enchantment.DEPTH_STRIDER,100, true);
+		pantalonesMeta.addEnchant(Enchantment.LUCK, 100, true);
+		pantalonesMeta.addEnchant(Enchantment.OXYGEN,100, true);
+		pantalonesMeta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL,100, true);
+		pantalonesMeta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 100, true);
+		pantalonesMeta.addEnchant(Enchantment.PROTECTION_FIRE,100, true);
+		pantalonesMeta.addEnchant(Enchantment.PROTECTION_PROJECTILE,100, true);
+		pantalonesMeta.addEnchant(Enchantment.SILK_TOUCH, 100, true);
+		pantalonesMeta.addEnchant(Enchantment.WATER_WORKER,100, true);
+		pantalonesMeta.addEnchant(Enchantment.THORNS,100, true);
 		pantalones.setItemMeta(pantalonesMeta);
 		inventario.addItem(pantalones);
 		

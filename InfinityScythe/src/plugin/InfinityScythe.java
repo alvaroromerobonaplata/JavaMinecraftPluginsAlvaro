@@ -16,21 +16,22 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class InfinityBlade extends JavaPlugin implements Listener{
+public class InfinityScythe extends JavaPlugin implements Listener{
 
 	@Override
 	public void onEnable() {
 		Bukkit.getServer().getPluginManager().registerEvents(this, this); 
-		ItemStack sword = new ItemStack (Material.DIAMOND_SWORD);
+		ItemStack sword = new ItemStack (Material.DIAMOND_HOE);
 		ItemMeta im = sword.getItemMeta();
-		im.setDisplayName(ChatColor.BLACK + "Infinity Blade");
+		im.setDisplayName(ChatColor.DARK_PURPLE + "InfinityScythe");
 		im.addEnchant(Enchantment.KNOCKBACK, 100,true);
 		im.addEnchant(Enchantment.FIRE_ASPECT, 100,true);
 		im.addEnchant (Enchantment.DURABILITY, 100, true);
+		im.addEnchant (Enchantment.DAMAGE_ALL, 10000, true);
 		sword.setItemMeta(im);
 		ShapedRecipe infinityBlade = new ShapedRecipe(sword);
-		infinityBlade.shape("o$o","$*$","$*$");
-		infinityBlade.setIngredient('$',Material.DIAMOND);
+		infinityBlade.shape("$$o","o*o","$*$");
+		infinityBlade.setIngredient('$',Material.NETHER_STAR);
 		infinityBlade.setIngredient('*',Material.BLAZE_ROD);
 		getServer().addRecipe(infinityBlade);
 		

@@ -10,13 +10,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
-public class Pickaggedon extends JavaPlugin implements Listener{
+public class InfinityPickaxe extends JavaPlugin implements Listener{
 
 	@Override
 	public void onEnable() {
@@ -25,7 +28,7 @@ public class Pickaggedon extends JavaPlugin implements Listener{
 		ItemMeta im = pickaxe.getItemMeta();
 		im.setDisplayName(ChatColor.DARK_GREEN + "InfinityPickaxe");
 		im.addEnchant(Enchantment.KNOCKBACK, 10,true);
-		im.addEnchant(Enchantment.DIG_SPEED, 20,true);
+		im.addEnchant(Enchantment.DIG_SPEED, 25,true);
 		im.addEnchant (Enchantment.DURABILITY, 100, true);
 		pickaxe.setItemMeta(im);
 		ShapedRecipe monsterPickaxe = new ShapedRecipe(pickaxe);
@@ -38,6 +41,15 @@ public class Pickaggedon extends JavaPlugin implements Listener{
 
 	
 
+	@EventHandler
+	public void onPlayerInteract(PlayerMoveEvent event){
+		Player p = event.getPlayer();
+		
+		if(p.getItemInHand().getType() == Material.DIAMOND_SWORD){
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 10));
+		}
 
 
 

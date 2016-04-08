@@ -33,7 +33,7 @@ public class InfinityScythe extends JavaPlugin implements Listener{
 		im.addEnchant (Enchantment.DAMAGE_ALL, 10000, true);
 		sword.setItemMeta(im);
 		ShapedRecipe infinityBlade = new ShapedRecipe(sword);
-		infinityBlade.shape("$$o","o*o","$*$");
+		infinityBlade.shape("$$o","o*o","o*o");
 		infinityBlade.setIngredient('$',Material.NETHER_STAR);
 		infinityBlade.setIngredient('*',Material.BLAZE_ROD);
 		getServer().addRecipe(infinityBlade);
@@ -47,7 +47,6 @@ public class InfinityScythe extends JavaPlugin implements Listener{
 		
 		if(p.getItemInHand().getType() == Material.DIAMOND_HOE){
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10, 10));
 		}
 
 	}

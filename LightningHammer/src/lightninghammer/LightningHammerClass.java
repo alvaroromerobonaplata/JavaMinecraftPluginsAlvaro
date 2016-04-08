@@ -6,6 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.SmallFireball;
 import org.bukkit.event.EventHandler;
@@ -29,6 +30,7 @@ public class LightningHammerClass extends JavaPlugin implements Listener {
 			ItemStack varaRayo = new ItemStack(Material.DIAMOND_AXE);
 			ItemMeta varaMeta = varaRayo.getItemMeta();
 			varaMeta.setDisplayName(ChatColor.BLUE + "LightningHammer");
+			varaMeta.addEnchant(Enchantment.DURABILITY, 100, true);
 			varaRayo.setItemMeta(varaMeta);
 			p.setItemInHand(varaRayo);
 			return true;
@@ -37,6 +39,9 @@ public class LightningHammerClass extends JavaPlugin implements Listener {
 		return false;
 	}
 
+	
+	
+	
 	@Override
 	public void onEnable() {
 		Bukkit.getServer().getPluginManager().registerEvents(this,this);
@@ -94,8 +99,8 @@ public class LightningHammerClass extends JavaPlugin implements Listener {
 		Player p = event.getPlayer();
 		
 		if(p.getItemInHand().getType() == Material.DIAMOND_AXE){
-			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 100));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 100, 5));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 5));
 			
 		}
 	

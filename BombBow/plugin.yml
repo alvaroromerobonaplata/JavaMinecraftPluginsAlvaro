@@ -1,0 +1,5 @@
+name: BombBow
+main: bombbow.BombBowClass
+version: 1.0.0
+commands:
+  b-bow:

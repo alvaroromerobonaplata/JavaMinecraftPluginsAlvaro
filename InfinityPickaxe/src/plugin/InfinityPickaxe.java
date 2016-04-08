@@ -26,7 +26,7 @@ public class InfinityPickaxe extends JavaPlugin implements Listener{
 		Bukkit.getServer().getPluginManager().registerEvents(this, this); 
 		ItemStack pickaxe = new ItemStack (Material.DIAMOND_PICKAXE);
 		ItemMeta im = pickaxe.getItemMeta();
-		im.setDisplayName(ChatColor.DARK_GREEN + "InfinityPickaxe");
+		im.setDisplayName(ChatColor.GREEN + "InfinityPickaxe");
 		im.addEnchant(Enchantment.KNOCKBACK, 10,true);
 		im.addEnchant(Enchantment.DIG_SPEED, 25,true);
 		im.addEnchant (Enchantment.DURABILITY, 100, true);
@@ -46,9 +46,9 @@ public class InfinityPickaxe extends JavaPlugin implements Listener{
 		Player p = event.getPlayer();
 		
 		if(p.getItemInHand().getType() == Material.DIAMOND_PICKAXE){
-			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 5));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 100, 5));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 100, 5));
 		}
 
 	}

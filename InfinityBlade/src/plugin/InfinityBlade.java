@@ -27,13 +27,13 @@ public class InfinityBlade extends JavaPlugin implements Listener{
 		Bukkit.getServer().getPluginManager().registerEvents(this, this); 
 		ItemStack sword = new ItemStack (Material.DIAMOND_SWORD);
 		ItemMeta im = sword.getItemMeta();
-		im.setDisplayName(ChatColor.BLUE + "InfinityBlade");
+		im.setDisplayName(ChatColor.RED + "InfinityBlade");
 		im.addEnchant(Enchantment.KNOCKBACK, 100,true);
 		im.addEnchant(Enchantment.FIRE_ASPECT, 100,true);
 		im.addEnchant (Enchantment.DURABILITY, 100, true);
 		sword.setItemMeta(im);
 		ShapedRecipe infinityBlade = new ShapedRecipe(sword);
-		infinityBlade.shape("o$o","$*$","$*$");
+		infinityBlade.shape("o$o","o$o","o*o");
 		infinityBlade.setIngredient('$',Material.NETHER_STAR);
 		infinityBlade.setIngredient('*',Material.BLAZE_ROD);
 		getServer().addRecipe(infinityBlade);
@@ -46,9 +46,8 @@ public class InfinityBlade extends JavaPlugin implements Listener{
 		Player p = event.getPlayer();
 		
 		if(p.getItemInHand().getType() == Material.DIAMOND_SWORD){
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 5));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 5));
 		}
 		
 		

@@ -1,4 +1,4 @@
-package firestaff;
+package bombbow;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -19,16 +19,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class FireStaffClass extends JavaPlugin implements Listener {
+public class BombBowClass extends JavaPlugin implements Listener {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		Player p = (Player)sender;
 
-		if(command.getName().equalsIgnoreCase("fire")){
-			ItemStack varaFuego = new ItemStack(Material.BLAZE_ROD);
+		if(command.getName().equalsIgnoreCase("b-bow")){
+			ItemStack varaFuego = new ItemStack(Material.BOW);
 			ItemMeta varaMeta = varaFuego.getItemMeta();
-			varaMeta.setDisplayName(ChatColor.GOLD + "Firestaff");
+			varaMeta.setDisplayName(ChatColor.YELLOW + "BombBow");
+			varaMeta.addEnchant(Enchantment.ARROW_INFINITE, 100, true);
+			varaMeta.addEnchant(Enchantment.DURABILITY, 100, true);
 			varaFuego.setItemMeta(varaMeta);
 			p.setItemInHand(varaFuego);
 			return true;
@@ -49,18 +51,9 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 			if(itemEnMano != null){
 				ItemMeta im = itemEnMano.getItemMeta();
 				if(im != null){
-					if(im.getDisplayName() != null && im.getDisplayName().equals(ChatColor.GOLD + "Firestaff")){
+					if(im.getDisplayName() != null && im.getDisplayName().equals(ChatColor.YELLOW + "BombBow")){
 						Player p = event.getPlayer();
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
-						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
+						
 
 
 					}
@@ -77,10 +70,9 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 	public void onPlayerInteract(PlayerMoveEvent event){
 		Player p = event.getPlayer();
 		
-		if(p.getItemInHand().getType() == Material.BLAZE_ROD){
-			p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 100, 5));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 100, 5));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100, 5));
+		if(p.getItemInHand().getType() == Material.BOW){
+			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 5));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 5));
 		}
 	}
 	

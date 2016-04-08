@@ -10,11 +10,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class InfinityScythe extends JavaPlugin implements Listener{
 
@@ -38,7 +41,16 @@ public class InfinityScythe extends JavaPlugin implements Listener{
 	}
 
 	
+	@EventHandler
+	public void onPlayerInteract(PlayerMoveEvent event){
+		Player p = event.getPlayer();
+		
+		if(p.getItemInHand().getType() == Material.DIAMOND_HOE){
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 10, 10));
+		}
 
+	}
 
 
 

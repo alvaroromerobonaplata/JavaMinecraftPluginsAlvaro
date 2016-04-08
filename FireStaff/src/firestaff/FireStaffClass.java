@@ -25,7 +25,7 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		Player p = (Player)sender;
 
-		if(command.getName().equalsIgnoreCase("firestaff")){
+		if(command.getName().equalsIgnoreCase("fire")){
 			ItemStack varaFuego = new ItemStack(Material.BLAZE_ROD);
 			ItemMeta varaMeta = varaFuego.getItemMeta();
 			varaMeta.setDisplayName(ChatColor.GOLD + "Firestaff");
@@ -49,7 +49,7 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 			if(itemEnMano != null){
 				ItemMeta im = itemEnMano.getItemMeta();
 				if(im != null){
-					if(im.getDisplayName() != null && im.getDisplayName().contains("fuego")){
+					if(im.getDisplayName() != null && im.getDisplayName().equals(ChatColor.GOLD + "Firestaff")){
 						Player p = event.getPlayer();
 						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
 						p.launchProjectile(SmallFireball.class, p.getEyeLocation().getDirection());
@@ -77,7 +77,7 @@ public class FireStaffClass extends JavaPlugin implements Listener {
 	public void onPlayerInteract(PlayerMoveEvent event){
 		Player p = event.getPlayer();
 		
-		if(p.getItemInHand().getType() == Material.DIAMOND_SWORD){
+		if(p.getItemInHand().getType() == Material.BLAZE_ROD){
 			p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 100, 10));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 100, 10));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 100, 10));

@@ -25,7 +25,7 @@ public class LightningHammerClass extends JavaPlugin implements Listener {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		Player p = (Player)sender;
 
-		if(command.getName().equalsIgnoreCase("shocking")){
+		if(command.getName().equalsIgnoreCase("lightning")){
 			ItemStack varaRayo = new ItemStack(Material.DIAMOND_AXE);
 			ItemMeta varaMeta = varaRayo.getItemMeta();
 			varaMeta.setDisplayName(ChatColor.BLUE + "LightningHammer");

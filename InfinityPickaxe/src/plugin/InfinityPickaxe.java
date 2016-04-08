@@ -45,13 +45,12 @@ public class InfinityPickaxe extends JavaPlugin implements Listener{
 	public void onPlayerInteract(PlayerMoveEvent event){
 		Player p = event.getPlayer();
 		
-		if(p.getItemInHand().getType() == Material.DIAMOND_SWORD){
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 10));
-			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 10));
+		if(p.getItemInHand().getType() == Material.DIAMOND_PICKAXE){
+			p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 100, 10));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 100, 10));
 		}
 
+	}
 
-
-
-}
+ }
